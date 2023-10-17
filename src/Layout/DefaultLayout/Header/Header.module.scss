@@ -1,8 +1,14 @@
-// header{
-//     width: 100%;
-//     height: auto;
-//     background-color: antiquewhite;
-// }
-i{
-    color: black;
+header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    background-color: #E3E2E8;
+}
+.nav_right{
+    width: 8%;
+    display: flex;
+    justify-content: space-between;
 }

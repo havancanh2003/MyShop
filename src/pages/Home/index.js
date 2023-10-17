@@ -1,5 +1,16 @@
+import Banner from "../../components/Banner";
+import Container from "../../components/Container";
+import classNames from "classnames/bind";
+import styles from "./Home.module.scss";
+const cx = classNames.bind(styles);
+
 const Home = () => {
-  return <h2>Home</h2>;
+  return (
+    <div className={cx("container")}>
+      <Banner />
+      <Container />
+    </div>
+  );
 };
 
 export default Home;
