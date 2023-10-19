@@ -8,10 +8,11 @@ function Product(props) {
   return (
     <div className={cx("product")}>
       <img src={src} alt="" />
-      <div styles={{ display: "flex", justifyContent: "space-between" }}>
+      <div className={cx("about_product")}>
         <span>{name}</span>
         <span>{price}</span>
       </div>
+      <span className={cx("des")}>This is the {name}</span>
     </div>
   );
 }
