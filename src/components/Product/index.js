@@ -1,19 +1,23 @@
+import { Link } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from "./Product.module.scss";
+
 const cx = classNames.bind(styles);
 
 function Product(props) {
-  const { src, name, price } = props.item;
+  const { id, src, name, price } = props.item;
   console.log(props.item);
   return (
-    <div className={cx("product")}>
-      <img src={src} alt="" />
-      <div className={cx("about_product")}>
-        <span>{name}</span>
-        <span>{price}</span>
+    <Link className={cx("linkitem")} to={"detail/" + id}>
+      <div className={cx("product")}>
+        <img src={src} alt="" />
+        <div className={cx("about_product")}>
+          <span>{name}</span>
+          <span>{price}</span>
+        </div>
+        <span className={cx("des")}>This is the {name}</span>
       </div>
-      <span className={cx("des")}>This is the {name}</span>
-    </div>
+    </Link>
   );
 }
 

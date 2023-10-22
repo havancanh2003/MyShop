@@ -1,11 +1,11 @@
 import Header from "./Header";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 function DefaultLayout({ children }) {
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <Header />
       <div>{children}</div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
