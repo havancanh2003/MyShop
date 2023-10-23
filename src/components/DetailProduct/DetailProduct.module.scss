@@ -1,4 +1,5 @@
 .contain_pro{
+    position: relative;
     width: 75%;
     margin: 0 auto;
     display: flex;
@@ -34,4 +35,17 @@
     min-height:30px; 
     min-width: 120px;
     }
+}
+.showDone{
+    width: 20%;
+    position: absolute;
+    margin: 0 auto;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
 }
