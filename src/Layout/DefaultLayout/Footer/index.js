@@ -10,10 +10,10 @@ function Footer() {
         En <i className="fa-solid fa-caret-down"></i>
       </span>
       <div className={cx("nav")}>
-        <Link to="/">CONTACT /</Link>
-        <Link to="/"> MEDIA /</Link>
-        <Link to="/"> LEGAL /</Link>
-        <Link to="/"> COOKIES</Link>
+        <Link to="/contact">CONTACT /</Link>
+        <Link to="/about"> ABOUT /</Link>
+        <Link to="/productList"> PRODUCTS /</Link>
+        <Link to="/"> HOME</Link>
       </div>
       <div>
         <span>Fb </span>

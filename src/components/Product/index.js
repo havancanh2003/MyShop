@@ -13,7 +13,7 @@ function Product(props) {
         <img src={src} alt="" />
         <div className={cx("about_product")}>
           <span>{name}</span>
-          <span>{price}</span>
+          <span>{price}$</span>
         </div>
         <span className={cx("des")}>This is the {name}</span>
       </div>

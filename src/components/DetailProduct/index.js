@@ -11,18 +11,31 @@ const cx = classNames.bind(style);
 
 // main
 const DetaiProduct = () => {
-  const { setCarts, setTotal } = useContext(Carts);
+  const { cart, setCarts, setTotal } = useContext(Carts);
   const [showDone, setShowDone] = useState(false);
   //const [overlay, setOverlay] = useState(false);
   const params = useParams();
   const resultFind = products.find((pro) => pro.id === params.id);
   const headleAddtoCart = () => {
-    setCarts((item) => [...item, resultFind]);
-    setTotal((total) => total + parseInt(resultFind.price));
-    //setOverlay(true);
+    const temp_pro = {
+      name: resultFind.name,
+      id: resultFind.id,
+      price: resultFind.price,
+      src: resultFind.src,
+      quantity: 1,
+    };
+    const temp = cart.find((pro) => pro.id === temp_pro.id);
+    if (temp) {
+      let array2 = [...cart];
+      array2.find((a) => a.id === temp.id).quantity += temp_pro.quantity;
+      setCarts(array2);
+    } else {
+      setCarts((item) => [...item, temp_pro]);
+    }
+
+    setTotal((total) => total + parseInt(temp_pro.price) * temp_pro.quantity);
     setShowDone(true);
   };
-  //console.log(resultFind);
   return (
     <>
       <div className={cx("contain_pro")}>
@@ -31,7 +44,7 @@ const DetaiProduct = () => {
         </div>
         <div className={cx("about_pro")}>
           <h1>{resultFind.name}</h1>
-          <h2>{resultFind.price}</h2>
+          <h2>{resultFind.price}$</h2>
           <span>this is {resultFind.name}</span>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
