@@ -7,6 +7,13 @@ import item6 from "./assets/item6.jpg";
 import item7 from "./assets/item7.jpg";
 import item8 from "./assets/item8.jpg";
 import item9 from "./assets/item9.jpg";
+import imageblog1 from "./assets/imageblog1.jpg";
+import imageblog2 from "./assets/imageblog2.jpg";
+import imageblog3 from "./assets/imageblog3.jpg";
+import imageblog4 from "./assets/imageblog4.jpg";
+import imageblog5 from "./assets/imageblog5.jpg";
+import imageblog6 from "./assets/imageblog6.jpg";
+
 export const products = [
   {
     id: "item1",
@@ -62,5 +69,56 @@ export const products = [
     name: "T-shirtSpam",
     price: "85",
     src: item9,
+  },
+];
+
+export const blogData = [
+  {
+    id: "blog1",
+    title: "TIZI ĐÍCH LÉP DỤ ÔNG LÉP ĐI MUA ĐỒ ĐÔI",
+    date: "APRIL 20, 2022",
+    src: imageblog1,
+    link: "https://youtu.be/PAQn4gbR3QI",
+  },
+
+  {
+    id: "blog2",
+    title: "NHA TO TRẢI NGHIỆM MUA SẮM HÀNG HIỆU TỐN HƠN 200 TRIỆU",
+    date: "MARCH 30, 2022",
+    src: imageblog2,
+    link: "https://youtu.be/ouPEeB_N79E",
+  },
+
+  {
+    id: "blog3",
+    title: "BÉ DUY CƠ BẮP ĐỔ GẦN “NỬA TỶ” SẮM ĐỒ TẾT VÀ CÁI KẾT",
+    date: "JANUARY 24, 2022",
+    src: imageblog3,
+    link: "https://youtu.be/o4uLvkbF36g",
+  },
+
+  {
+    id: "blog4",
+    title:
+      "XEMESIS CHI 140 TRIỆU CHO MỘT BỮA SHOPPING ĐÓN TẾT RỒI BỊ XOÀI NON GIẬN",
+    date: "JANUARY 8, 2020",
+    src: imageblog4,
+    link: "https://youtu.be/ARNNrJg6Vno",
+  },
+
+  {
+    id: "blog5",
+    title: "CÙNG FABO NGUYEN KHÁM PHÁ CHIẾC HỘP HYPEBEAST BÍ ẨN 100 TRIỆU",
+    date: "APRIL 20, 2022",
+    src: imageblog5,
+    link: "https://youtu.be/BF_pwpZo9k0",
+  },
+
+  {
+    id: "blo6",
+    title: "BENJAMIN TRAN ĐƯA CHỊ LÙN MUA ĐỒ HIỆU Ở SÀI GÒN",
+    date: "MAY 1, 2021",
+    src: imageblog6,
+    link: "https://youtu.be/aS4JpPaqVi0",
   },
 ];

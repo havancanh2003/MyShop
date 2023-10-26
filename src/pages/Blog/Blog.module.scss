@@ -1,0 +1,16 @@
+.blog{
+    display: grid;
+    // width: 80%;
+    // margin: 5% auto 0;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+}
+.contain{
+    width: 80%;
+    margin: 2% auto 0;
+}
+h1{
+    padding: 15px;
+    color: #333;
+
+}

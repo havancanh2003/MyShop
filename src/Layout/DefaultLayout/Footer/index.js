@@ -11,7 +11,7 @@ function Footer() {
       </span>
       <div className={cx("nav")}>
         <Link to="/contact">CONTACT /</Link>
-        <Link to="/about"> ABOUT /</Link>
+        <Link to="/blog"> BLOG /</Link>
         <Link to="/productList"> PRODUCTS /</Link>
         <Link to="/"> HOME</Link>
       </div>

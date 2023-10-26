@@ -1,0 +1,26 @@
+.boxItem{
+    width: 100%;
+    display: flex;
+    justify-self: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 15px;
+    padding-bottom: 8rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 2rem;
+
+}
+.boxItem:hover{
+    transform: translateY(-10px);
+    transition: ease 0.5s all;
+}
+a{
+    text-align: center;
+    color: black;
+    img{
+        width: 100%;
+        border-radius: 2rem;
+    }
+}
+
