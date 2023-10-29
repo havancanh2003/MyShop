@@ -1,5 +1,5 @@
-import { products } from "../../data";
-import Product from "../Product";
+import { collections } from "../../data";
+import CollectionItem from "../CollectionItem";
 import classNames from "classnames/bind";
 import styles from "./Container.module.scss";
 
@@ -12,9 +12,9 @@ function Container() {
         <span>TRAVEL</span>
         <span>EVERY DAY</span>
       </div>
-      <div className={cx("listProducts")}>
-        {products.map((item) => (
-          <Product key={item.id} item={item} />
+      <div className={cx("listCollection")}>
+        {collections.map((item) => (
+          <CollectionItem key={item.id} item={item} />
         ))}
       </div>
     </div>

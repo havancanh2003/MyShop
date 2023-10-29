@@ -1,0 +1,18 @@
+.collections{
+    width:80%;
+    // height: ;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    // background-color: #333;
+    img{
+        width: 100%;
+        height: fit-content;
+    }
+    .about_collection{
+        margin: 0 auto;
+        span{
+            font-weight: 700;
+        }
+    }
+}

@@ -13,6 +13,19 @@ import imageblog3 from "./assets/imageblog3.jpg";
 import imageblog4 from "./assets/imageblog4.jpg";
 import imageblog5 from "./assets/imageblog5.jpg";
 import imageblog6 from "./assets/imageblog6.jpg";
+import collection1 from "./assets/collection1.jpg";
+import collection2 from "./assets/collection2.jpg";
+import collection3 from "./assets/collection3.jpg";
+import collection4 from "./assets/collection4.jpg";
+import itemcollection1 from "./assets/itemcollection1.jpg";
+import itemcollection2 from "./assets/itemcollection2.jpg";
+import itemcollection3 from "./assets/itemcollection3.jpg";
+import itemcollection4 from "./assets/itemcollection4.jpg";
+import itemcollection5 from "./assets/itemcollection5.jpg";
+import itemcollection6 from "./assets/itemcollection6.jpg";
+import itemcollection7 from "./assets/itemcollection7.jpg";
+import itemcollection8 from "./assets/itemcollection8.jpg";
+import itemcollection9 from "./assets/itemcollection9.jpg";
 
 export const products = [
   {
@@ -120,5 +133,29 @@ export const blogData = [
     date: "MAY 1, 2021",
     src: imageblog6,
     link: "https://youtu.be/aS4JpPaqVi0",
+  },
+];
+
+export const collections = [
+  {
+    id: "collection1",
+    name: "BAGS",
+    src: collection1,
+  },
+  {
+    id: "collection2",
+    name: "TEES",
+    src: collection2,
+  },
+  {
+    id: "collection3",
+    name: "SHOES",
+    src: collection3,
+  },
+
+  {
+    id: "collection4",
+    name: "SHOES",
+    src: collection4,
   },
 ];

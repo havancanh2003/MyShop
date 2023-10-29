@@ -1,9 +1,9 @@
-.listProducts{
+.listCollection{
     width: 100%;
     padding: 0 5% 0 5%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 3rem;
 }
 .title{
