@@ -8,7 +8,7 @@ function Product(props) {
   const { id, src, name, price } = props.item;
   console.log(props.item);
   return (
-    <Link className={cx("linkitem")} to={"detail/" + id}>
+    <Link style={{ textDecoration: "none" }} to={"detail/" + id}>
       <div className={cx("product")}>
         <img src={src} alt="" />
         <div className={cx("about_product")}>

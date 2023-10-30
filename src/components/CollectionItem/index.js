@@ -9,11 +9,12 @@ const CollectionItem = (props) => {
   const { id, src, name } = props.item;
   console.log(id);
   return (
-    <Link to={"collection/" + id}>
+    <Link style={{ textDecoration: "none" }} to={"collection/" + id}>
       <div className={cx("collections")}>
         <img src={src} alt="" />
         <div className={cx("about_collection")}>
           <span>{name}</span>
+          <i className="fa-solid fa-arrow-right"></i>
         </div>
       </div>
     </Link>

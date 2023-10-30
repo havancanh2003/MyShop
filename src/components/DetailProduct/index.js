@@ -15,6 +15,7 @@ const DetaiProduct = () => {
   const [showDone, setShowDone] = useState(false);
   //const [overlay, setOverlay] = useState(false);
   const params = useParams();
+  // console.log(params);
   const resultFind = products.find((pro) => pro.id === params.id);
   const headleAddtoCart = () => {
     const temp_pro = {

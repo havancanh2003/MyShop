@@ -27,7 +27,144 @@ import itemcollection7 from "./assets/itemcollection7.jpg";
 import itemcollection8 from "./assets/itemcollection8.jpg";
 import itemcollection9 from "./assets/itemcollection9.jpg";
 
-export const products = [
+const blogData = [
+  {
+    id: "blog1",
+    title: "TIZI ĐÍCH LÉP DỤ ÔNG LÉP ĐI MUA ĐỒ ĐÔI",
+    date: "APRIL 20, 2022",
+    src: imageblog1,
+    link: "https://youtu.be/PAQn4gbR3QI",
+  },
+
+  {
+    id: "blog2",
+    title: "NHA TO TRẢI NGHIỆM MUA SẮM HÀNG HIỆU TỐN HƠN 200 TRIỆU",
+    date: "MARCH 30, 2022",
+    src: imageblog2,
+    link: "https://youtu.be/ouPEeB_N79E",
+  },
+
+  {
+    id: "blog3",
+    title: "BÉ DUY CƠ BẮP ĐỔ GẦN “NỬA TỶ” SẮM ĐỒ TẾT VÀ CÁI KẾT",
+    date: "JANUARY 24, 2022",
+    src: imageblog3,
+    link: "https://youtu.be/o4uLvkbF36g",
+  },
+
+  {
+    id: "blog4",
+    title:
+      "XEMESIS CHI 140 TRIỆU CHO MỘT BỮA SHOPPING ĐÓN TẾT RỒI BỊ XOÀI NON GIẬN",
+    date: "JANUARY 8, 2020",
+    src: imageblog4,
+    link: "https://youtu.be/ARNNrJg6Vno",
+  },
+
+  {
+    id: "blog5",
+    title: "CÙNG FABO NGUYEN KHÁM PHÁ CHIẾC HỘP HYPEBEAST BÍ ẨN 100 TRIỆU",
+    date: "APRIL 20, 2022",
+    src: imageblog5,
+    link: "https://youtu.be/BF_pwpZo9k0",
+  },
+
+  {
+    id: "blo6",
+    title: "BENJAMIN TRAN ĐƯA CHỊ LÙN MUA ĐỒ HIỆU Ở SÀI GÒN",
+    date: "MAY 1, 2021",
+    src: imageblog6,
+    link: "https://youtu.be/aS4JpPaqVi0",
+  },
+];
+
+const collections = [
+  {
+    id: "collection1",
+    name: "BAGS",
+    src: collection1,
+  },
+  {
+    id: "collection2",
+    name: "TEES",
+    src: collection2,
+  },
+  {
+    id: "collection3",
+    name: "SHOES",
+    src: collection3,
+  },
+
+  {
+    id: "collection4",
+    name: "BUCKET HAT",
+    src: collection4,
+  },
+];
+const collectionBagS = [
+  {
+    id: "collectionBag1",
+    name: "BAG Paker",
+    price: "99",
+    src: itemcollection1,
+  },
+  {
+    id: "collectionBag2",
+    name: "BAG Cheap",
+    price: "129",
+    src: itemcollection2,
+  },
+  {
+    id: "collectionBag3",
+    name: "BAG Astro",
+    price: "79",
+    src: itemcollection3,
+  },
+];
+
+const collectionTee = [
+  {
+    id: "collectionTee1",
+    name: "TEE Paker",
+    price: "99",
+    src: itemcollection4,
+  },
+  {
+    id: "collectionTee2",
+    name: "TEE Arvl",
+    price: "99",
+    src: itemcollection5,
+  },
+  {
+    id: "collectionTee3",
+    name: "TEE Big",
+    price: "99",
+    src: itemcollection6,
+  },
+];
+
+const collectionShoes = [
+  {
+    id: "collectionShoes1",
+    name: "SHOES Paker",
+    price: "99",
+    src: itemcollection7,
+  },
+  {
+    id: "collectionShoes2",
+    name: "SHOES Paker",
+    price: "99",
+    src: itemcollection8,
+  },
+  {
+    id: "collectionShoes3",
+    name: "SHOES Paker",
+    price: "99",
+    src: itemcollection9,
+  },
+];
+
+const products = [
   {
     id: "item1",
     name: "Sock",
@@ -83,79 +220,16 @@ export const products = [
     price: "85",
     src: item9,
   },
+  ...collectionBagS,
+  ...collectionShoes,
+  ...collectionTee,
 ];
 
-export const blogData = [
-  {
-    id: "blog1",
-    title: "TIZI ĐÍCH LÉP DỤ ÔNG LÉP ĐI MUA ĐỒ ĐÔI",
-    date: "APRIL 20, 2022",
-    src: imageblog1,
-    link: "https://youtu.be/PAQn4gbR3QI",
-  },
-
-  {
-    id: "blog2",
-    title: "NHA TO TRẢI NGHIỆM MUA SẮM HÀNG HIỆU TỐN HƠN 200 TRIỆU",
-    date: "MARCH 30, 2022",
-    src: imageblog2,
-    link: "https://youtu.be/ouPEeB_N79E",
-  },
-
-  {
-    id: "blog3",
-    title: "BÉ DUY CƠ BẮP ĐỔ GẦN “NỬA TỶ” SẮM ĐỒ TẾT VÀ CÁI KẾT",
-    date: "JANUARY 24, 2022",
-    src: imageblog3,
-    link: "https://youtu.be/o4uLvkbF36g",
-  },
-
-  {
-    id: "blog4",
-    title:
-      "XEMESIS CHI 140 TRIỆU CHO MỘT BỮA SHOPPING ĐÓN TẾT RỒI BỊ XOÀI NON GIẬN",
-    date: "JANUARY 8, 2020",
-    src: imageblog4,
-    link: "https://youtu.be/ARNNrJg6Vno",
-  },
-
-  {
-    id: "blog5",
-    title: "CÙNG FABO NGUYEN KHÁM PHÁ CHIẾC HỘP HYPEBEAST BÍ ẨN 100 TRIỆU",
-    date: "APRIL 20, 2022",
-    src: imageblog5,
-    link: "https://youtu.be/BF_pwpZo9k0",
-  },
-
-  {
-    id: "blo6",
-    title: "BENJAMIN TRAN ĐƯA CHỊ LÙN MUA ĐỒ HIỆU Ở SÀI GÒN",
-    date: "MAY 1, 2021",
-    src: imageblog6,
-    link: "https://youtu.be/aS4JpPaqVi0",
-  },
-];
-
-export const collections = [
-  {
-    id: "collection1",
-    name: "BAGS",
-    src: collection1,
-  },
-  {
-    id: "collection2",
-    name: "TEES",
-    src: collection2,
-  },
-  {
-    id: "collection3",
-    name: "SHOES",
-    src: collection3,
-  },
-
-  {
-    id: "collection4",
-    name: "SHOES",
-    src: collection4,
-  },
-];
+export {
+  products,
+  blogData,
+  collections,
+  collectionBagS,
+  collectionTee,
+  collectionShoes,
+};

@@ -4,7 +4,7 @@ import Cart from "../pages/Cart";
 import DetaiProduct from "../components/DetailProduct";
 import ProductList from "../pages/ProductList";
 import Blog from "../pages/Blog";
-import CollectionList from "../components/CollectionItem";
+import CollectionList from "../components/CollectionList";
 export const publicRouters = [
   { path: "/", component: Home },
   { path: "/collection/:id/", component: CollectionList },
