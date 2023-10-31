@@ -5,12 +5,7 @@ import classNames from "classnames/bind";
 import style from "./Cart.module.scss";
 
 const cx = classNames.bind(style);
-// function headleRemove(id) {
-//   let temp_cart = [...cart];
-//   const removeIndex = temp_cart.findIndex((item) => item.id === id);
-//   temp_cart.splice(removeIndex, 1);
-//   setCarts(temp_cart);
-// }
+
 const Cart = () => {
   const { cart, total, setTotal, setCarts } = useContext(Carts);
   const [done, setDone] = useState(false);
@@ -20,15 +15,29 @@ const Cart = () => {
     setCarts([]);
     setDone(true);
   };
-  // function headleRemove(id) {
-  //   let temp_cart = [...cart];
-  //   const removeIndex = temp_cart.findIndex((item) => item.id === id);
-  //   temp_cart.splice(removeIndex, 1);
-  //   setCarts(temp_cart);
-  // }
-  const headleRemove = (id) => {
-    // console.log(id);
 
+  const headlePlus = (id) => {
+    // let temp_cart = [...cart];
+    const resultFind = cart.find((pro) => pro.id === id);
+    if (resultFind) {
+      let array2 = [...cart];
+      array2.find((a) => a.id === resultFind.id).quantity += 1;
+      setTotal((total) => total + parseInt(resultFind.price));
+      setCarts(array2);
+    }
+  };
+
+  const headleMinus = (id) => {
+    const resultFind = cart.find((pro) => pro.id === id);
+    if (resultFind && resultFind.quantity > 1) {
+      let array2 = [...cart];
+      array2.find((a) => a.id === resultFind.id).quantity -= 1;
+      setCarts(array2);
+      setTotal((total) => total - parseInt(resultFind.price));
+    }
+  };
+
+  const headleRemove = (id) => {
     let temp_cart = [...cart];
     const resultFind = temp_cart.find((pro) => pro.id === id);
     console.log(resultFind);
@@ -57,9 +66,15 @@ const Cart = () => {
               </div>
             </div>
             <div className={cx("center")}>
-              <i className="fa-solid fa-plus"></i>
+              <i
+                onClick={(e) => headlePlus(products.id)}
+                className="fa-solid fa-plus"
+              ></i>
               <span>{products.quantity}</span>
-              <i className="fa-solid fa-minus"></i>
+              <i
+                onClick={(e) => headleMinus(products.id)}
+                className="fa-solid fa-minus"
+              ></i>
             </div>
             <div className={cx("right")}>
               <span>{products.price}$</span>
@@ -70,7 +85,6 @@ const Cart = () => {
             </div>
           </div>
         ))}
-        {/* onChanges={(e) => onAchieven(e, index, i)} */}
       </div>
       {done ? (
         <div className={cx("done")}>

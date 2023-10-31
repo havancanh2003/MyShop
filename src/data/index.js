@@ -103,18 +103,21 @@ const collections = [
 ];
 const collectionBagS = [
   {
+    foreign_key: "collection1",
     id: "collectionBag1",
     name: "BAG Paker",
     price: "99",
     src: itemcollection1,
   },
   {
+    foreign_key: "collection1",
     id: "collectionBag2",
     name: "BAG Cheap",
     price: "129",
     src: itemcollection2,
   },
   {
+    foreign_key: "collection1",
     id: "collectionBag3",
     name: "BAG Astro",
     price: "79",
@@ -124,18 +127,21 @@ const collectionBagS = [
 
 const collectionTee = [
   {
+    foreign_key: "collection2",
     id: "collectionTee1",
     name: "TEE Paker",
     price: "99",
     src: itemcollection4,
   },
   {
+    foreign_key: "collection2",
     id: "collectionTee2",
     name: "TEE Arvl",
     price: "99",
     src: itemcollection5,
   },
   {
+    foreign_key: "collection2",
     id: "collectionTee3",
     name: "TEE Big",
     price: "99",
@@ -145,18 +151,21 @@ const collectionTee = [
 
 const collectionShoes = [
   {
+    foreign_key: "collection3",
     id: "collectionShoes1",
     name: "SHOES Paker",
     price: "99",
     src: itemcollection7,
   },
   {
+    foreign_key: "collection3",
     id: "collectionShoes2",
     name: "SHOES Paker",
     price: "99",
     src: itemcollection8,
   },
   {
+    foreign_key: "collection3",
     id: "collectionShoes3",
     name: "SHOES Paker",
     price: "99",

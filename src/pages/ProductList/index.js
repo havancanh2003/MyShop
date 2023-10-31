@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { products } from "../../data";
 import Product from "../../components/Product";
 import classNames from "classnames/bind";
@@ -12,7 +13,9 @@ const ProductList = () => {
       <h2>All Products</h2>
       <div className={cx("listProducts")}>
         {products.map((item) => (
-          <Product key={item.id} item={item} />
+          <Link style={{ textDecoration: "none" }} to={"detail/" + item.id}>
+            <Product key={item.id} item={item} />
+          </Link>
         ))}
       </div>
     </>
