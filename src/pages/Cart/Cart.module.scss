@@ -15,6 +15,9 @@
     padding: 2rem 0 2rem 0;
     border-bottom: .5px solid #aba9a9;
     border-top: .5px solid #aba9a9;
+    i{
+        cursor: pointer;
+    }
 }
 .center,.right,.left{
     width: 20%;
@@ -42,6 +45,7 @@
     justify-content: flex-end;
     i{
         margin-left: 3rem;
+        
     }
 }
 .total{

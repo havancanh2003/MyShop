@@ -8,7 +8,7 @@ const cx = classNames.bind(style);
 const Blog = () => {
   return (
     <div className={cx("contain")}>
-      <h1>BLOG</h1>
+      <h1 className={cx("h1")}>BLOG</h1>
       <div className={cx("blog")}>
         {blogData.map((blog) => (
           <BlogItem key={blog.id} blog={blog} />

@@ -13,9 +13,8 @@ const cx = classNames.bind(style);
 const DetaiProduct = () => {
   const { cart, setCarts, setTotal } = useContext(Carts);
   const [showDone, setShowDone] = useState(false);
-  //const [overlay, setOverlay] = useState(false);
+  // const [overlay, setOverlay] = useState(false);
   const params = useParams();
-  // console.log(params);
   const resultFind = products.find((pro) => pro.id === params.id);
   const headleAddtoCart = () => {
     const temp_pro = {
@@ -35,7 +34,10 @@ const DetaiProduct = () => {
     }
 
     setTotal((total) => total + parseInt(temp_pro.price) * temp_pro.quantity);
+    // setTimeout(() => {
+    //   setOverlay(true);
     setShowDone(true);
+    // }, 10);
   };
   return (
     <>
@@ -45,16 +47,15 @@ const DetaiProduct = () => {
         </div>
         <div className={cx("about_pro")}>
           <h1>{resultFind.name}</h1>
+          <h2>This is {resultFind.name}</h2>
           <h2>{resultFind.price}$</h2>
-          <span>this is {resultFind.name}</span>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            pariatur.
           </span>
           <div className={cx("btn")}>
             <button>Buy Now</button>

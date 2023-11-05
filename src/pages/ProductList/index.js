@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 const ProductList = () => {
   return (
     <>
-      <h2>All Products</h2>
+      <h2 className={cx("h2")}>All Products</h2>
       <div className={cx("listProducts")}>
         {products.map((item) => (
           <Link style={{ textDecoration: "none" }} to={"detail/" + item.id}>
