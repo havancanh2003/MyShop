@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import { products } from "../../data";
-
+import { Link } from "react-router-dom";
 import classNames from "classnames/bind";
 import style from "./DetailProduct.module.scss";
 import { Carts } from "../../Context";
@@ -11,7 +11,7 @@ const cx = classNames.bind(style);
 
 // main
 const DetaiProduct = () => {
-  const { cart, setCarts, setTotal } = useContext(Carts);
+  const { cart, setCarts, setTotal, setCartNumber } = useContext(Carts);
   const [showDone, setShowDone] = useState(false);
   // const [overlay, setOverlay] = useState(false);
   const params = useParams();
@@ -37,8 +37,11 @@ const DetaiProduct = () => {
     // setTimeout(() => {
     //   setOverlay(true);
     setShowDone(true);
+
+    // setCartNumber(cart.length);
     // }, 10);
   };
+  setCartNumber(cart.length);
   return (
     <>
       <div className={cx("contain_pro")}>
@@ -58,7 +61,9 @@ const DetaiProduct = () => {
             pariatur.
           </span>
           <div className={cx("btn")}>
-            <button>Buy Now</button>
+            <Link to="/buynow">
+              <button>Buy Now</button>
+            </Link>
             <button onClick={headleAddtoCart}>Add to cart</button>
           </div>
           {/* {overlay ? <div className={cx("overlay")}></div> : <></>} */}

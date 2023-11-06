@@ -6,8 +6,11 @@ import { useState } from "react";
 function App() {
   const [cart, setCarts] = useState([]);
   const [total, setTotal] = useState(0);
+  const [cartNumber, setCartNumber] = useState("");
   return (
-    <Carts.Provider value={{ cart, setCarts, total, setTotal }}>
+    <Carts.Provider
+      value={{ cart, setCarts, total, setTotal, cartNumber, setCartNumber }}
+    >
       <Router>
         <div className="App">
           <Routes>

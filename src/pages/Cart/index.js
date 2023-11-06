@@ -7,8 +7,13 @@ import style from "./Cart.module.scss";
 const cx = classNames.bind(style);
 
 const Cart = () => {
-  const { cart, total, setTotal, setCarts } = useContext(Carts);
+  const { cart, total, setTotal, setCarts, setCartNumber } = useContext(Carts);
   const [done, setDone] = useState(false);
+  // lấy ra cái url sau khi feth về
+  // const [url, setUrl] = useState("");
+  // trong ham call appi => setUrl(url đầu tiên) => khi này cái url nhận về cái url vừa đc set
+
+  // const [frame, setFame] = useState(value); json => url base 64
   console.log(cart);
   const purChase = () => {
     setTotal(0);
@@ -48,7 +53,7 @@ const Cart = () => {
     temp_cart.splice(removeIndex, 1);
     setCarts(temp_cart);
   };
-
+  setCartNumber(cart.length);
   return (
     <div className={cx("container_cart")}>
       <h2>/ Your Order</h2>
