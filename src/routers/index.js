@@ -12,7 +12,7 @@ export const publicRouters = [
   { path: "/contact", component: Contact },
   { path: "/cart", component: Cart },
   { path: "/blog", component: Blog },
-  { path: "/buynow", component: BuyNow },
+  { path: "/buynow/:pro", component: BuyNow },
   { path: "/productList", component: ProductList },
   { path: "/productList/detail/:id/", component: DetaiProduct },
 ];

@@ -6,6 +6,7 @@ import classNames from "classnames/bind";
 import style from "./DetailProduct.module.scss";
 import { Carts } from "../../Context";
 import { useContext } from "react";
+// import BuyNow from './../../pages/BuyNow/index';
 const cx = classNames.bind(style);
 //add to cart
 
@@ -16,14 +17,14 @@ const DetaiProduct = () => {
   // const [overlay, setOverlay] = useState(false);
   const params = useParams();
   const resultFind = products.find((pro) => pro.id === params.id);
+  const temp_pro = {
+    name: resultFind.name,
+    id: resultFind.id,
+    price: resultFind.price,
+    src: resultFind.src,
+    quantity: 1,
+  };
   const headleAddtoCart = () => {
-    const temp_pro = {
-      name: resultFind.name,
-      id: resultFind.id,
-      price: resultFind.price,
-      src: resultFind.src,
-      quantity: 1,
-    };
     const temp = cart.find((pro) => pro.id === temp_pro.id);
     if (temp) {
       let array2 = [...cart];
@@ -40,6 +41,11 @@ const DetaiProduct = () => {
 
     // setCartNumber(cart.length);
     // }, 10);
+  };
+
+  // buy BuyNow
+  const headleBuyNow = () => {
+    headleAddtoCart();
   };
   setCartNumber(cart.length);
   return (
@@ -61,8 +67,8 @@ const DetaiProduct = () => {
             pariatur.
           </span>
           <div className={cx("btn")}>
-            <Link to="/buynow">
-              <button>Buy Now</button>
+            <Link to={"/buynow/" + temp_pro.id}>
+              <button onClick={headleBuyNow}>Buy Now</button>
             </Link>
             <button onClick={headleAddtoCart}>Add to cart</button>
           </div>

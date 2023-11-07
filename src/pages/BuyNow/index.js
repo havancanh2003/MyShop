@@ -1,9 +1,19 @@
 import React from "react";
 import classNames from "classnames/bind";
 import style from "./BuyNow.module.scss";
+import { useParams } from "react-router";
+import { useContext } from "react";
+import { Carts } from "../../Context";
 
 const cx = classNames.bind(style);
 const BuyNow = () => {
+  const { cart, total, setCartNumber } = useContext(Carts);
+  setCartNumber(cart.length);
+  // console.log(cart);
+  const id = useParams();
+  // console.log(id.pro);
+  const resultFind = cart.find((item) => item.id === id.pro);
+  console.log(resultFind);
   return (
     <>
       <div className={cx("row")}>
@@ -13,7 +23,7 @@ const BuyNow = () => {
               <div className={cx("row")}>
                 <div className={cx("col-50")}>
                   <h3>Billing Address</h3>
-                  <label for="fname">
+                  <label htmlFor="fname">
                     <i className="fa fa-user"></i> Full Name
                   </label>
                   <input
@@ -21,17 +31,19 @@ const BuyNow = () => {
                     id="fname"
                     name="firstname"
                     placeholder="John M. Doe"
+                    required
                   />
-                  <label for="email">
+                  <label htmlFor="email">
                     <i className="fa fa-envelope"></i> Email
                   </label>
                   <input
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     placeholder="john@example.com"
+                    required
                   />
-                  <label for="adr">
+                  <label htmlFor="adr">
                     <i className="fa fa-address-card-o"></i> Address
                   </label>
                   <input
@@ -39,8 +51,9 @@ const BuyNow = () => {
                     id="adr"
                     name="address"
                     placeholder="542 W. 15th Street"
+                    required
                   />
-                  <label for="city">
+                  <label htmlFor="city">
                     <i className="fa fa-institution"></i> City
                   </label>
                   <input
@@ -48,25 +61,28 @@ const BuyNow = () => {
                     id="city"
                     name="city"
                     placeholder="New York"
+                    required
                   />
 
                   <div className={cx("row")}>
                     <div className={cx("col-50")}>
-                      <label for="state">State</label>
+                      <label htmlFor="state">State</label>
                       <input
                         type="text"
                         id="state"
                         name="state"
                         placeholder="NY"
+                        required
                       />
                     </div>
                     <div className={cx("col-50")}>
-                      <label for="zip">Zip</label>
+                      <label htmlFor="zip">Zip</label>
                       <input
                         type="text"
                         id="zip"
                         name="zip"
                         placeholder="10001"
+                        required
                       />
                     </div>
                   </div>
@@ -74,77 +90,111 @@ const BuyNow = () => {
 
                 <div className={cx("col-50")}>
                   <h3>Payment</h3>
-                  <label for="fname">Accepted Cards</label>
+                  <label htmlFor="fname">Accepted Cards</label>
                   <div className={cx("icon-container")}>
-                    <i className="fa fa-cc-visa" style={{ color: "navy" }}></i>
-                    <i className="fa fa-cc-amex" style={{ color: "blue" }}></i>
                     <i
-                      className="fa fa-cc-mastercard"
+                      className="fa-brands fa-cc-visa"
+                      style={{ color: "navy" }}
+                    ></i>
+                    <i
+                      className="fa-brands fa-cc-amex"
+                      style={{ color: "blue" }}
+                    ></i>
+                    <i
+                      className="fa-brands fa-cc-mastercard"
                       style={{ color: "red" }}
                     ></i>
-                    <i
-                      className="fa fa-cc-discover"
-                      style={{ color: "orange" }}
-                    ></i>
                   </div>
-                  <label for="cname">Name on Card</label>
+                  <label htmlFor="cname">Name on Card</label>
                   <input
                     type="text"
                     id="cname"
                     name="cardname"
                     placeholder="John More Doe"
+                    required
                   />
-                  <label for="ccnum">Credit card number</label>
+                  <label htmlFor="ccnum">Credit card number</label>
                   <input
                     type="text"
                     id="ccnum"
                     name="cardnumber"
                     placeholder="1111-2222-3333-4444"
+                    required
                   />
-                  <label for="expmonth">Exp Month</label>
+                  <label htmlFor="expmonth">Exp Month</label>
                   <input
                     type="text"
                     id="expmonth"
                     name="expmonth"
                     placeholder="September"
+                    required
                   />
 
                   <div className={cx("row")}>
                     <div className={cx("col-50")}>
-                      <label for="expyear">Exp Year</label>
+                      <label htmlFor="expyear">Exp Year</label>
                       <input
                         type="text"
                         id="expyear"
                         name="expyear"
                         placeholder="2018"
+                        required
                       />
                     </div>
                     <div className={cx("col-50")}>
-                      <label for="cvv">CVV</label>
+                      <label htmlFor="cvv">CVV</label>
                       <input
                         type="text"
                         id="cvv"
                         name="cvv"
                         placeholder="352"
+                        required
                       />
                     </div>
                   </div>
                 </div>
               </div>
               <label>
-                <input type="checkbox" checked="checked" name="sameadr" />{" "}
+                <input
+                  onChange={() => {}}
+                  type="checkbox"
+                  checked="checked"
+                  name="sameadr"
+                />{" "}
                 Shipping address same as billing
               </label>
               <input
                 type="submit"
                 value="Continue to checkout"
-                className="btn"
+                className={cx("btn")}
               />
             </form>
+
+            <div className={cx("col-25")}>
+              <div className={cx("container")}>
+                <h4>
+                  Cart
+                  <span className={cx("price")} style={{ color: "black" }}>
+                    <i className="fa fa-shopping-cart"></i>
+                  </span>
+                </h4>
+                <p>
+                  <span>{resultFind.name}</span>{" "}
+                  <span className={cx("price")}>${resultFind.price}</span>
+                </p>
+                <hr />
+                <p>
+                  Total{" "}
+                  <span className={cx("price")} style={{ color: "black" }}>
+                    <b>{total}</b>
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className={cx("col-25")}>
+        {/* <div className={cx("col-25")}>
           <div className={cx("container")}>
             <h4>
               Cart
@@ -174,7 +224,7 @@ const BuyNow = () => {
               </span>
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
