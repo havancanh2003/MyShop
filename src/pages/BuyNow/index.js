@@ -9,11 +9,8 @@ const cx = classNames.bind(style);
 const BuyNow = () => {
   const { cart, total, setCartNumber } = useContext(Carts);
   setCartNumber(cart.length);
-  // console.log(cart);
   const id = useParams();
-  // console.log(id.pro);
   const resultFind = cart.find((item) => item.id === id.pro);
-  console.log(resultFind);
   return (
     <>
       <div className={cx("row")}>
@@ -178,10 +175,34 @@ const BuyNow = () => {
                     <i className="fa fa-shopping-cart"></i>
                   </span>
                 </h4>
-                <p>
-                  <span>{resultFind.name}</span>{" "}
+                <p
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      margin: "1rem 0 1rem 0",
+                    }}
+                  >
+                    <img
+                      style={{ width: "60px", borderRadius: "10px" }}
+                      src={resultFind.src}
+                      alt=""
+                    />
+                    <span style={{ marginLeft: "10px" }}>
+                      {resultFind.name}
+                    </span>{" "}
+                  </div>
                   <span className={cx("price")}>${resultFind.price}</span>
                 </p>
+
+                {/*  */}
+
                 <hr />
                 <p>
                   Total{" "}

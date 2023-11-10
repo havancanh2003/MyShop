@@ -6,12 +6,16 @@ import ProductList from "../pages/ProductList";
 import Blog from "../pages/Blog";
 import CollectionList from "../components/CollectionList";
 import BuyNow from "../pages/BuyNow";
+import Admin from "../admin";
+
 export const publicRouters = [
   { path: "/", component: Home },
+  { path: "/admin", component: Admin },
   { path: "/collection/:id/", component: CollectionList },
   { path: "/contact", component: Contact },
   { path: "/cart", component: Cart },
   { path: "/blog", component: Blog },
+  { path: "/buynow", component: BuyNow },
   { path: "/buynow/:pro", component: BuyNow },
   { path: "/productList", component: ProductList },
   { path: "/productList/detail/:id/", component: DetaiProduct },

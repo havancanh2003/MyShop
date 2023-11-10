@@ -3,6 +3,7 @@ import { Carts } from "../../Context";
 import { useContext } from "react";
 import classNames from "classnames/bind";
 import style from "./Cart.module.scss";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(style);
 
@@ -100,7 +101,9 @@ const Cart = () => {
       )}
       <div className={cx("total")}>
         <span>Subtotal: {total}$</span>
-        <button onClick={purChase}>PurChase</button>
+        <Link to="/buynow">
+          <button onClick={purChase}>PurChase</button>
+        </Link>
       </div>
     </div>
   );
