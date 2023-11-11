@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Carts } from "../../Context";
 import { useContext } from "react";
 import classNames from "classnames/bind";
@@ -9,18 +9,11 @@ const cx = classNames.bind(style);
 
 const Cart = () => {
   const { cart, total, setTotal, setCarts, setCartNumber } = useContext(Carts);
-  const [done, setDone] = useState(false);
-  // lấy ra cái url sau khi feth về
-  // const [url, setUrl] = useState("");
-  // trong ham call appi => setUrl(url đầu tiên) => khi này cái url nhận về cái url vừa đc set
-
-  // const [frame, setFame] = useState(value); json => url base 64
+  // if (cart !== null) {
+  //   console.log(1);
+  // }
   console.log(cart);
-  const purChase = () => {
-    setTotal(0);
-    setCarts([]);
-    setDone(true);
-  };
+  const purChase = () => {};
 
   const headlePlus = (id) => {
     // let temp_cart = [...cart];
@@ -56,56 +49,101 @@ const Cart = () => {
   };
   setCartNumber(cart.length);
   return (
-    <div className={cx("container_cart")}>
-      <h2>/ Your Order</h2>
-
-      <div className={cx("productsList")}>
-        {cart.map((products) => (
-          <div key={products.id} className={cx("detail_pro")}>
-            <div className={cx("left")}>
-              <div className={cx("img")}>
-                <img src={products.src} alt="" />
+    <>
+      {cart.length !== 0 ? (
+        <div className={cx("container_cart")}>
+          <h2>/ Your Order</h2>
+          <div className={cx("productsList")}>
+            {cart.map((products) => (
+              <div key={products.id} className={cx("detail_pro")}>
+                <div className={cx("left")}>
+                  <div className={cx("img")}>
+                    <img src={products.src} alt="" />
+                  </div>
+                  <div className={cx("title")}>
+                    <h3>{products.name}</h3>
+                    <span>This is {products.name}</span>
+                  </div>
+                </div>
+                <div className={cx("right")}>
+                  <div className={cx("center")}>
+                    <i
+                      onClick={(e) => headlePlus(products.id)}
+                      className="fa-solid fa-plus"
+                    ></i>
+                    <span>{products.quantity}</span>
+                    <i
+                      onClick={(e) => headleMinus(products.id)}
+                      className="fa-solid fa-minus"
+                    ></i>
+                  </div>
+                  <span>{products.price}$</span>
+                  <i
+                    className="fa-solid fa-xmark"
+                    onClick={(e) => headleRemove(products.id)}
+                  ></i>
+                </div>
               </div>
-              <div className={cx("title")}>
-                <h3>{products.name}</h3>
-                <span>This is {products.name}</span>
-              </div>
-            </div>
-            <div className={cx("center")}>
-              <i
-                onClick={(e) => headlePlus(products.id)}
-                className="fa-solid fa-plus"
-              ></i>
-              <span>{products.quantity}</span>
-              <i
-                onClick={(e) => headleMinus(products.id)}
-                className="fa-solid fa-minus"
-              ></i>
-            </div>
-            <div className={cx("right")}>
-              <span>{products.price}$</span>
-              <i
-                className="fa-solid fa-xmark"
-                onClick={(e) => headleRemove(products.id)}
-              ></i>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
-      {done ? (
-        <div className={cx("done")}>
-          <h1>Thank You</h1>
+          <div className={cx("total")}>
+            <span>Subtotal: {total}$</span>
+            <Link to="/puchase">
+              <button onClick={purChase}>PurChase</button>
+            </Link>
+          </div>
         </div>
       ) : (
-        <></>
+        <div className={cx("empty")}>
+          <h1>Your Cart Is Empty</h1>
+          <Link to="/productList">
+            <button>Shopping Now</button>
+          </Link>
+        </div>
       )}
-      <div className={cx("total")}>
-        <span>Subtotal: {total}$</span>
-        <Link to="/buynow">
-          <button onClick={purChase}>PurChase</button>
-        </Link>
-      </div>
-    </div>
+    </>
+    // {/* <div className={cx("container_cart")}>
+    //   <h2>/ Your Order</h2>
+    //   <div className={cx("productsList")}>
+    //     {cart.map((products) => (
+    //       <div key={products.id} className={cx("detail_pro")}>
+    //         <div className={cx("left")}>
+    //           <div className={cx("img")}>
+    //             <img src={products.src} alt="" />
+    //           </div>
+    //           <div className={cx("title")}>
+    //             <h3>{products.name}</h3>
+    //             <span>This is {products.name}</span>
+    //           </div>
+    //         </div>
+    //         <div className={cx("center")}>
+    //           <i
+    //             onClick={(e) => headlePlus(products.id)}
+    //             className="fa-solid fa-plus"
+    //           ></i>
+    //           <span>{products.quantity}</span>
+    //           <i
+    //             onClick={(e) => headleMinus(products.id)}
+    //             className="fa-solid fa-minus"
+    //           ></i>
+    //         </div>
+    //         <div className={cx("right")}>
+    //           <span>{products.price}$</span>
+    //           <i
+    //             className="fa-solid fa-xmark"
+    //             onClick={(e) => headleRemove(products.id)}
+    //           ></i>
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className={cx("total")}>
+    //     <span>Subtotal: {total}$</span>
+    //     <Link to="/puchase">
+    //       <button onClick={purChase}>PurChase</button>
+    //     </Link>
+    //   </div>
+    // </div> */}
   );
 };
 

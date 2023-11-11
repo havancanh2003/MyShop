@@ -70,7 +70,13 @@ const DetaiProduct = () => {
             <Link to={"/buynow/" + temp_pro.id}>
               <button onClick={headleBuyNow}>Buy Now</button>
             </Link>
-            <button onClick={headleAddtoCart}>Add to cart</button>
+            <button
+              id={cx("addcart")}
+              className={cx("addtocart")}
+              onClick={headleAddtoCart}
+            >
+              Add to cart
+            </button>
           </div>
           {/* {overlay ? <div className={cx("overlay")}></div> : <></>} */}
           {showDone ? (

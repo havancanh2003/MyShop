@@ -11,7 +11,14 @@ function Header() {
   return (
     <header className={cx("header")}>
       <i className="fa-solid fa-bars-staggered"></i>
-      <Link to="/" style={{ textDecoration: "none", color: "#333" }}>
+      <Link
+        to="/"
+        style={{
+          transform: "translateX(48.5px)",
+          textDecoration: "none",
+          color: "#333",
+        }}
+      >
         <Logo />
       </Link>
       <div className={cx("nav_right")}>

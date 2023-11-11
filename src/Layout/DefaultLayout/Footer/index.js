@@ -16,11 +16,12 @@ function Footer() {
         <Link to="/"> HOME</Link>
       </div>
       <div>
-        <span>Fb </span>
+        {/* <span>Fb </span>
         <span>TW </span>
         <span>Yt </span>
         <span>Ln </span>
-        <span>Ly</span>
+        <span>Ly</span> */}
+        © 2023, APINE AUTHENTIC
       </div>
     </footer>
   );

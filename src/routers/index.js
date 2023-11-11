@@ -7,6 +7,7 @@ import Blog from "../pages/Blog";
 import CollectionList from "../components/CollectionList";
 import BuyNow from "../pages/BuyNow";
 import Admin from "../admin";
+import Puchase from "./../pages/Purchase";
 
 export const publicRouters = [
   { path: "/", component: Home },
@@ -15,7 +16,7 @@ export const publicRouters = [
   { path: "/contact", component: Contact },
   { path: "/cart", component: Cart },
   { path: "/blog", component: Blog },
-  { path: "/buynow", component: BuyNow },
+  { path: "/puchase", component: Puchase },
   { path: "/buynow/:pro", component: BuyNow },
   { path: "/productList", component: ProductList },
   { path: "/productList/detail/:id/", component: DetaiProduct },

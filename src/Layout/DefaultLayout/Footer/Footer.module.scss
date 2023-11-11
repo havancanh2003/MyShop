@@ -1,11 +1,13 @@
 footer{
     display: flex;
     justify-content: space-between;
-    padding: 5%;
-   
+    padding: 2%;
+    margin: 3%;
+    // border-top: 1px solid #E3E2E8 ;
 }
 .nav{
-    margin-left: 5rem;
+    transform: translateX(75.9px);
+    // margin-left: 5rem;
     a{
         text-decoration: none;
     }
