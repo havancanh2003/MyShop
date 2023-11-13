@@ -21,7 +21,7 @@ function Footer() {
         <span>Yt </span>
         <span>Ln </span>
         <span>Ly</span> */}
-        © 2023, APINE AUTHENTIC
+        © 2023, ALPINE AUTHENTIC
       </div>
     </footer>
   );

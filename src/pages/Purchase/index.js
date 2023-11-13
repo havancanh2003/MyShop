@@ -203,8 +203,17 @@ const Puchase = () => {
                         {resultFind.name}
                       </span>{" "}
                     </div>
-                    <span> {"[" + resultFind.quantity + "]"}</span>
-                    <span className={cx("price")}>${resultFind.price}</span>
+                    <div
+                      style={{
+                        width: "20%",
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <span> {"[" + resultFind.quantity + "]"}</span>
+                      <span>x</span>
+                      <span className={cx("price")}>${resultFind.price}</span>
+                    </div>
                   </p>
                 ))}
 

@@ -13,8 +13,8 @@ const cx = classNames.bind(style);
 // main
 const DetaiProduct = () => {
   const { cart, setCarts, setTotal, setCartNumber } = useContext(Carts);
-  const [showDone, setShowDone] = useState(false);
-  // const [overlay, setOverlay] = useState(false);
+  // const [showDone, setShowDone] = useState(false);
+  const [overlay, setOverlay] = useState(false);
   const params = useParams();
   const resultFind = products.find((pro) => pro.id === params.id);
   const temp_pro = {
@@ -33,23 +33,25 @@ const DetaiProduct = () => {
     } else {
       setCarts((item) => [...item, temp_pro]);
     }
-
+    setOverlay(true);
     setTotal((total) => total + parseInt(temp_pro.price) * temp_pro.quantity);
-    // setTimeout(() => {
-    //   setOverlay(true);
-    setShowDone(true);
-
-    // setCartNumber(cart.length);
-    // }, 10);
+    setTimeout(() => {
+      setOverlay(false);
+    }, 1000);
   };
-
-  // buy BuyNow
   const headleBuyNow = () => {
     headleAddtoCart();
   };
   setCartNumber(cart.length);
   return (
     <>
+      {overlay ? (
+        <div className={cx("overlay")}>
+          <h1>Add To Cart</h1>
+        </div>
+      ) : (
+        <></>
+      )}
       <div className={cx("contain_pro")}>
         <div className={cx("img_pro")}>
           <img src={resultFind.src} alt="" />
@@ -78,14 +80,6 @@ const DetaiProduct = () => {
               Add to cart
             </button>
           </div>
-          {/* {overlay ? <div className={cx("overlay")}></div> : <></>} */}
-          {showDone ? (
-            <div className={cx("showDone")}>
-              <h2>Add To Cart</h2>
-            </div>
-          ) : (
-            <></>
-          )}
         </div>
       </div>
     </>

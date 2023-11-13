@@ -51,43 +51,12 @@
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    h1{
+      color: #e2dfdf;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 }
-
-.addtocart{
-    &.sendtocart {
-        .cart-item {
-          display:block;
-          animation: xAxis 1s forwards cubic-bezier(1.000,0.440,0.840,0.165);
-          &:before {
-            animation: yAxis 1s alternate forwards cubic-bezier(0.165, 0.840, 0.440, 1.000);
-          }
-        }
-      }
-}
-
-@keyframes xAxis {
-    100% {
-      transform: translateX(calc(50vw - 105px));
-    }
-  }
-  
-  @keyframes yAxis {
-    100% {
-      transform: translateY(calc(-50vh + 75px));
-    }
-  }
-  
-  @keyframes shakeCart {
-    25% {
-      transform:translateX(6px)
-    }
-    50% {
-      transform:translateX(-4px);
-    }
-    75% {
-      transform:translateX(2px);
-    }
-    100% {
-      transform:translateX(0);
-    }
-  }

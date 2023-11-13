@@ -3,13 +3,25 @@ import { publicRouters } from "./routers";
 import DefaultLayout from "./Layout/DefaultLayout";
 import { Carts } from "./Context";
 import { useState } from "react";
+import { products } from "./data";
 function App() {
   const [cart, setCarts] = useState([]);
   const [total, setTotal] = useState(0);
+  const [listProducts, setListProducts] = useState(products);
   const [cartNumber, setCartNumber] = useState("");
+  console.log(listProducts);
   return (
     <Carts.Provider
-      value={{ cart, setCarts, total, setTotal, cartNumber, setCartNumber }}
+      value={{
+        listProducts,
+        setListProducts,
+        cart,
+        setCarts,
+        total,
+        setTotal,
+        cartNumber,
+        setCartNumber,
+      }}
     >
       <Router>
         <div className="App">
