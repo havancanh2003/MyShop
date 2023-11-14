@@ -19,10 +19,26 @@ function Admin() {
     setListProducts(templeListProducts);
   };
 
-  const hanleUpdateProduct = (product) => {
+  const hanleUpdateProduct = (id) => {
     setOverlay(true);
-    console.log(product);
+    const list = [...listProducts];
+    const nextShapes = list.map((shape) => {
+      if (shape.id === id) {
+        // No change
+        return shape;
+      } else {
+        // Return a new circle 50px below
+        return {
+          ...shape,
+          name: (shape.name = { name }),
+        };
+      }
+    });
+
+    setListProducts(nextShapes);
   };
+  const submit = () => {};
+
   return (
     <>
       {overlay ? (
@@ -62,7 +78,7 @@ function Admin() {
               {name ? <span>this is {name}</span> : <></>}
               {price ? <span>${price}</span> : <></>}
             </div>
-            <button>Update</button>
+            <button onClick={submit}>Update</button>
           </div>
         </div>
       ) : (
@@ -100,7 +116,7 @@ function Admin() {
                   <button onClick={(e) => hanleRemoveProduct(row.id)}>
                     Delete
                   </button>
-                  <button onClick={(e) => hanleUpdateProduct(row)}>
+                  <button onClick={(e) => hanleUpdateProduct(row.id)}>
                     Update
                   </button>
                 </td>

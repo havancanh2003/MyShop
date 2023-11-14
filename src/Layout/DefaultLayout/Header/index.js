@@ -24,7 +24,24 @@ function Header() {
       <div className={cx("nav_right")}>
         <Link to="/cart" style={{ textDecoration: "none", color: "#333" }}>
           <i style={{ position: "relative" }} className="fa-solid fa-cart-plus">
-            <span
+            {cartNumber ? (
+              <span
+                style={{
+                  color: "#fff",
+                  padding: "5px",
+                  backgroundColor: "red",
+                  fontSize: ".8rem",
+                  borderRadius: "10px",
+                  position: "absolute",
+                  top: "-10px",
+                }}
+              >
+                {cartNumber}
+              </span>
+            ) : (
+              <></>
+            )}
+            {/* <span
               style={{
                 color: "#fff",
                 padding: "5px",
@@ -36,7 +53,7 @@ function Header() {
               }}
             >
               {cartNumber}
-            </span>
+            </span> */}
           </i>
         </Link>
         <span style={{ lineHeight: "1" }}>
