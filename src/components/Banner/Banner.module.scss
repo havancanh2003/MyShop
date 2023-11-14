@@ -27,3 +27,16 @@
         width: 100%;
     }
 }
+@media only screen and (max-width: 600px) {
+    .banner{
+        flex-direction: column;
+        padding: 0 3% 0 3%;
+    }
+    .about{
+        margin-top: 10px;
+        width: 100%;
+    }
+    .img{
+        width: 100%;
+    }
+}

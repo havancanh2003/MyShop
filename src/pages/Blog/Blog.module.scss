@@ -14,3 +14,9 @@
     color: #333;
 
 }
+@media only screen and (max-width: 600px) {
+    .blog{
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+}

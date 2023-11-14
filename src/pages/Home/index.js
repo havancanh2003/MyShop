@@ -7,8 +7,12 @@ const cx = classNames.bind(styles);
 const Home = () => {
   return (
     <div className={cx("container")}>
-      <Banner />
-      <Container />
+      <div>
+        <Banner />
+      </div>
+      <div>
+        <Container />
+      </div>
     </div>
   );
 };

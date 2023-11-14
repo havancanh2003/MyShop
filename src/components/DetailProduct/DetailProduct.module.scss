@@ -60,3 +60,32 @@
       align-items: center;
     }
 }
+
+
+
+@media only screen and (max-width: 600px) {
+.contain_pro{
+    flex-direction: column;
+    .img_pro{
+        width: 100%;
+        img{
+            height: 250px;
+        }
+    }
+    .about_pro{
+        margin-top: 10px;
+        padding-bottom: 7rem;
+        width: 100%;
+        .price{
+            position: absolute;
+            top: 6px;
+            right: 0;
+            
+            // transform: translateY(-76px);
+        }
+        .btn{
+            justify-content: center;
+        }
+    }
+    
+}}

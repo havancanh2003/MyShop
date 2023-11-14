@@ -12,3 +12,15 @@ header{
     display: flex;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 600px) {
+    .bar,.language{
+        display: none;
+    }
+    .logo{
+        transform: translateX(0);
+    }
+    header{
+        border-bottom: 0.1px solid #bdbcbc;
+    }
+}

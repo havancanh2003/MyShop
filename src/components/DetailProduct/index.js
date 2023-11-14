@@ -58,8 +58,8 @@ const DetaiProduct = () => {
         </div>
         <div className={cx("about_pro")}>
           <h1>{resultFind.name}</h1>
-          <h2>This is {resultFind.name}</h2>
-          <h2>{resultFind.price}$</h2>
+          <h3>This is {resultFind.name}</h3>
+          <h2 className={cx("price")}>{resultFind.price}$</h2>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
