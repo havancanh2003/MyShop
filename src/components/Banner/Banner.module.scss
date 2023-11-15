@@ -27,7 +27,7 @@
         width: 100%;
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 599px) {
     .banner{
         flex-direction: column;
         padding: 0 3% 0 3%;
@@ -37,6 +37,18 @@
         width: 100%;
     }
     .img{
-        width: 100%;
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px){
+    .banner{
+        padding: 3%;
+    }
+    .about{
+        width: 50%;
+    }
+    .img{
+        width: 40%;
     }
 }

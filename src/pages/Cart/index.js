@@ -77,11 +77,13 @@ const Cart = () => {
                       className="fa-solid fa-minus"
                     ></i>
                   </div>
-                  <span>{products.price}$</span>
-                  <i
-                    className="fa-solid fa-xmark"
-                    onClick={(e) => headleRemove(products.id)}
-                  ></i>
+                  <span className={cx("price_cart")}>{products.price}$</span>
+                  <div className={cx("remove")}>
+                    <i
+                      className="fa-solid fa-xmark"
+                      onClick={(e) => headleRemove(products.id)}
+                    ></i>
+                  </div>
                 </div>
               </div>
             ))}

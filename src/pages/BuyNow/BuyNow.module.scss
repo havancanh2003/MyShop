@@ -105,12 +105,25 @@
     color: grey;
   }
   
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
-  // @media (max-width: 800px) {
-  //   .row {
-  //     flex-direction: column-reverse;
-  //   }
-  //   .col-25 {
-  //     margin-bottom: 20px;
-  //   }
-  // }
+  @media only screen and (max-width: 599px){
+    .container{
+      flex-direction: column-reverse;
+    }
+    .row{
+      width: 100%;
+      display: block;
+      // flex-direction: column;
+    }
+    .col-50{
+      padding: 0;
+    }
+    .col-75{
+      // display: flex;
+      justify-content: center;
+    }
+  }
+  @media only screen and (min-width: 599px) and (max-width: 1023px){
+    .container{
+      flex-direction: column-reverse;
+    }
+  }
