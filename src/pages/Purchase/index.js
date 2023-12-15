@@ -8,7 +8,12 @@ const cx = classNames.bind(style);
 
 const Puchase = () => {
   const { cart, total } = useContext(Carts);
+  // const [done, showDone] = useState(false);
   console.log(cart);
+
+  // const submit = () => {
+  //   showDone(true);
+  // };
 
   return (
     <>
@@ -20,6 +25,7 @@ const Puchase = () => {
                 <div className={cx("col-50")}>
                   <h3>Billing Address</h3>
                   <label htmlFor="fname">
+                    {/* htmlFor="fname" */}
                     <i className="fa fa-user"></i> Full Name
                   </label>
                   <input
@@ -163,6 +169,7 @@ const Puchase = () => {
                 type="submit"
                 value="Continue to checkout"
                 className={cx("btn")}
+                // onClick={submit}
               />
             </form>
 
@@ -263,6 +270,7 @@ const Puchase = () => {
           </div>
         </div> */}
       </div>
+      )
     </>
   );
 };

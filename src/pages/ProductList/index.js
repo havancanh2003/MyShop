@@ -14,8 +14,12 @@ const ProductList = () => {
       <h2 className={cx("h2")}>All Products</h2>
       <div className={cx("listProducts")}>
         {listProducts.map((item) => (
-          <Link style={{ textDecoration: "none" }} to={"detail/" + item.id}>
-            <Product key={item.id} item={item} />
+          <Link
+            key={item.id}
+            style={{ textDecoration: "none" }}
+            to={"detail/" + item.id}
+          >
+            <Product item={item} />
           </Link>
         ))}
       </div>

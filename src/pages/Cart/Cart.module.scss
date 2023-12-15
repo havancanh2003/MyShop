@@ -137,6 +137,12 @@
     .container_cart{
         margin-bottom: 5rem;
     }
+    .empty{
+        width: 100%;
+        h1{
+            font-size: 1.3rem;
+        }
+    }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1024px){
@@ -151,5 +157,11 @@
     }
     .container_cart{
         margin-bottom: 5rem;
+    }
+    .empty{
+        width: 100%;
+        h1{
+            font-size: 1.8rem;
+        }
     }
 }

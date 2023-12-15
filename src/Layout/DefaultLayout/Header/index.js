@@ -11,7 +11,7 @@ function Header() {
   return (
     <header className={cx("header")}>
       <div className={cx("bar")}>
-        <i className="fa-solid fa-bars-staggered"></i>
+        {/* <i className="fa-solid fa-bars-staggered"></i> */}
       </div>
       <div className={cx("logo")}>
         <Link
@@ -48,9 +48,9 @@ function Header() {
             )}
           </i>
         </Link>
-        <span className={cx("language")} style={{ lineHeight: "1" }}>
+        {/* <span className={cx("language")} style={{ lineHeight: "1" }}>
           En <i className="fa-solid fa-caret-down"></i>
-        </span>
+        </span> */}
       </div>
     </header>
   );

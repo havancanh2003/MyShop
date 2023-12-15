@@ -15,7 +15,7 @@ function Footer() {
         <Link to="/productList"> PRODUCTS /</Link>
         <Link to="/"> HOME</Link>
       </div>
-      <div>
+      <div className={cx("au")}>
         {/* <span>Fb </span>
         <span>TW </span>
         <span>Yt </span>
